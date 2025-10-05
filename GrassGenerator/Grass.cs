@@ -60,6 +60,7 @@ public class Grass : MonoBehaviour
     private uint threadGroupSize;
     private int terrainTriangleCount = 0;
 
+
     private void Start()
     {
         kernel = computeShader.FindKernel("CalculateBladePositions");

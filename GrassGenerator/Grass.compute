@@ -12,6 +12,16 @@ uniform float _MinOffset;
 uniform float _MaxOffset;
 uniform float4x4 _TerrainObjectToWorld;
 
+// Wind settings
+Texture2D<float4> _WindNoiseTexture;
+SamplerState sampler_WindNoiseTexture;
+
+float2 _WindPosMult; // how fast the noise scrolls over position
+float _WindTimeMult; // how fast the noise animates with time
+float _WindTexMult; // how much to scale UVs
+float _WindStrength; // how strong the bending effect
+float _Time; // passed from C# as Time.time
+
 #define TWO_PI 6.28318530718f
 
 // Function that takes a 2-element seed and returns a random value
@@ -76,3 +86,6 @@ void CalculateBladePositions(uint3 id : SV_DispatchThreadID)
 
 	_TransformMatrices[id.x] = mul(_TerrainObjectToWorld, mul(grassTransformMatrix, randomRotationMatrix));
 }
+
+\
+
