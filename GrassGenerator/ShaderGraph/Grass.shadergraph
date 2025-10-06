@@ -1047,10 +1047,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -307.33331298828127,
-            "y": -439.3333740234375,
-            "width": 209.33334350585938,
-            "height": 317.3333740234375
+            "x": -354.6666564941406,
+            "y": -327.9999694824219,
+            "width": 207.3333282470703,
+            "height": 133.33331298828126
         }
     },
     "m_Slots": [
@@ -1386,8 +1386,8 @@
     "m_ObjectId": "52f2dd328e4d40fdbd52a81b4c490a8d",
     "m_Title": "Color",
     "m_Position": {
-        "x": -783.9998779296875,
-        "y": 1256.0
+        "x": -783.999755859375,
+        "y": 1256.0001220703125
     }
 }
 
@@ -1571,10 +1571,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -655.3333129882813,
-            "y": 365.9999694824219,
-            "width": 209.33334350585938,
-            "height": 314.6666564941406
+            "x": -800.6665649414063,
+            "y": 386.6666259765625,
+            "width": 209.33331298828126,
+            "height": 314.66668701171877
         }
     },
     "m_Slots": [
@@ -2003,7 +2003,7 @@
     "m_DisableTint": false,
     "m_AdditionalMotionVectorMode": 0,
     "m_AlembicMotionVectors": false,
-    "m_SupportsLODCrossFade": false,
+    "m_SupportsLODCrossFade": true,
     "m_CustomEditorGUI": "",
     "m_SupportVFX": false
 }
@@ -2826,10 +2826,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -294.419677734375,
-            "y": 404.91363525390627,
-            "width": 120.66667175292969,
-            "height": 150.66665649414063
+            "x": -439.99993896484377,
+            "y": 425.333251953125,
+            "width": 120.66668701171875,
+            "height": 150.666748046875
         }
     },
     "m_Slots": [
