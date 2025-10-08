@@ -287,8 +287,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b95cc61f2ea586f428975b1e690800e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xSize: 100
-  zSize: 100
+  xSize: 10
+  zSize: 10
   xOffset: 0
   zOffset: 0
   noiseScale: 0.08
@@ -395,6 +395,7 @@ MonoBehaviour:
   player: {fileID: 1118320327}
   renderRange: 10
   useGpuInstantiation: 1
+  usePlayerDistance: 0
 --- !u!1 &724568330
 GameObject:
   m_ObjectHideFlags: 0

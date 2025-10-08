@@ -19,6 +19,10 @@ public class TerrainGenerator : MonoBehaviour
     private Mesh mesh;
     private Texture2D gradientTexture;
     public float[,] heights;
+    public int XSize => xSize;
+    public int ZSize => zSize;
+
+
 
     void Start()
     {
@@ -70,6 +74,7 @@ public class TerrainGenerator : MonoBehaviour
             {
                 float yPos = Mathf.PerlinNoise((x + xOffset) * noiseScale, (z + zOffset) * noiseScale) * heightMultiplier;
                 vertices[i] = new Vector3(x, yPos, z);
+                Debug.Log(vertices[i]);
                 heights[x, z] = yPos;
                 i++;
             }
