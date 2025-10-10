@@ -40,8 +40,8 @@ Material:
     m_Floats:
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _wind_Strength: 2.39
-    - _wind_density: 0.11
+    - _wind_Strength: 1.47
+    - _wind_density: 0.09
     m_Colors:
     - _Wind_Movement: {r: 6, g: 0, b: 0, a: 0}
     - _colorHigh: {r: 0.8579609, g: 0.9811321, b: 0.14500996, a: 0}

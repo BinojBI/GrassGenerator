@@ -94,7 +94,7 @@ public class GrassInstancer2 : MonoBehaviour
             float randomYRot = Random.Range(0f, 360f);
             Quaternion rotation = Quaternion.FromToRotation(Vector3.up, worldNormal) * Quaternion.Euler(0, randomYRot, 0);
             float randomScale = Random.Range(0.8f, 1.2f);
-            Vector3 scale = Vector3.one * randomScale * 0.4f;
+            Vector3 scale = Vector3.one * randomScale * 0.2f;
 
             grassPositions.Add(worldPos);
             grassRotations.Add(rotation);
