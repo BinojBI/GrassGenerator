@@ -1,0 +1,29 @@
+// Each #kernel tells which function to compile; you can have many kernels
+#pragma kernel CSMainn
+
+
+StructuredBuffer<float4x4> _AllGrassMatrices; // Input: all grass transforms
+AppendStructuredBuffer<float4x4> _HighLODTransforms; // Output: close
+AppendStructuredBuffer<float4x4> _LowLODTransforms;
+
+float3 _PlayerPos;
+float _LodDistanceSqr; // distance squared
+uint _GrassCount;
+
+[numthreads(1024,1,1)]
+void CSMainn (uint3 id : SV_DispatchThreadID)
+{
+    if (id.x >= _GrassCount) return;
+
+    float4x4 mat = _AllGrassMatrices[id.x];
+    float3 pos = mat[3].xyz; // last column = position
+
+    float3 diff = pos - _PlayerPos;
+    float distSqr = dot(diff, diff);
+    
+
+    if (distSqr < _LodDistanceSqr)
+        _HighLODTransforms.Append(mat);
+    else
+        _LowLODTransforms.Append(mat);
+}
