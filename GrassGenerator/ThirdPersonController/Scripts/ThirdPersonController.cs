@@ -1,6 +1,4 @@
-﻿
-using UnityEditor.VersionControl;
-using UnityEngine;
+﻿using UnityEngine;
 
 /*
     This file has a commented version with details about how each line works. 

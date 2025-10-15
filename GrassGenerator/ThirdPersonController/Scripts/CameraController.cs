@@ -1,5 +1,4 @@
-﻿
-using UnityEngine;
+﻿using UnityEngine;
 
 /*
     This file has a commented version with details about how each line works. 
@@ -52,9 +51,10 @@ public class CameraController : MonoBehaviour
 
         // Follow player - camera offset
         transform.position = player.position + new Vector3(0, offsetDistanceY, 0);
+        //Debug.Log($"Player pos: {player.position}");
 
         // Set camera zoom when mouse wheel is scrolled
-        if( canZoom && Input.GetAxis("Mouse ScrollWheel") != 0 )
+        if ( canZoom && Input.GetAxis("Mouse ScrollWheel") != 0 )
             Camera.main.fieldOfView -= Input.GetAxis("Mouse ScrollWheel") * sensitivity * 2;
         // You can use Mathf.Clamp to set limits on the field of view
 

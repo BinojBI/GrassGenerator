@@ -14,8 +14,8 @@ Material:
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
+  m_EnableInstancingVariants: 1
+  m_DoubleSidedGI: 1
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
@@ -24,7 +24,13 @@ Material:
     serializedVersion: 3
     m_TexEnvs: []
     m_Ints: []
-    m_Floats: []
-    m_Colors: []
+    m_Floats:
+    - _ColorVariation: 0
+    - _WindFrequency: 0
+    - _WindSpeed: 0.63
+    - _WindStrength: 0.091
+    m_Colors:
+    - _BaseColorBottom: {r: 0.048475094, g: 0.27044016, b: 0.048475094, a: 1}
+    - _BaseColorTop: {r: 0.65556747, g: 0.899371, b: 0.34221336, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

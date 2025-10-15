@@ -1,5 +1,5 @@
 // Each #kernel tells which function to compile; you can have many kernels
-#pragma kernel CSMainn
+#pragma kernel CSMain
 
 
 StructuredBuffer<float4x4> _AllGrassMatrices; // Input: all grass transforms
@@ -11,7 +11,7 @@ float _LodDistanceSqr; // distance squared
 uint _GrassCount;
 
 [numthreads(1024,1,1)]
-void CSMainn (uint3 id : SV_DispatchThreadID)
+void CSMain (uint3 id : SV_DispatchThreadID)
 {
     if (id.x >= _GrassCount) return;
 
