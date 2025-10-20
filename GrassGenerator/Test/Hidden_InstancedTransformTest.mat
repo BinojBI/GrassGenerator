@@ -27,8 +27,8 @@ Material:
     m_Floats:
     - _ColorVariation: 0
     - _WindFrequency: 0
-    - _WindSpeed: 0.63
-    - _WindStrength: 0.091
+    - _WindSpeed: 1.4
+    - _WindStrength: 0.065
     m_Colors:
     - _BaseColorBottom: {r: 0.048475094, g: 0.27044016, b: 0.048475094, a: 1}
     - _BaseColorTop: {r: 0.65556747, g: 0.899371, b: 0.34221336, a: 1}

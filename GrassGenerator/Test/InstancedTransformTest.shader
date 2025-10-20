@@ -24,6 +24,7 @@
 
             #include "UnityCG.cginc"
             #include "Lighting.cginc"
+            #include "AutoLight.cginc"
 
             StructuredBuffer<float4x4> _TransformMatrices;
 
@@ -104,15 +105,32 @@
             }
 
             fixed4 frag(v2f i) : SV_Target
-            {
-                // Basic Lambert lighting
-                float3 normalDir = normalize(i.worldNormal);
-                float3 lightDir = normalize(_WorldSpaceLightPos0.xyz);
-                float diff = saturate(dot(normalDir, lightDir));
+{
+    float3 normalDir = normalize(i.worldNormal);
+    float3 viewDir = normalize(_WorldSpaceCameraPos - i.worldPos);
 
-                float3 col = i.colorLerp * (_LightColor0.rgb * diff + 0.2); // add small ambient
-                return float4(col, 1.0);
-            }
+    // Start with ambient + main directional
+    float3 col = 0;
+    float3 lightDir = normalize(_WorldSpaceLightPos0.xyz);
+    float diff = saturate(dot(normalDir, lightDir));
+    col += i.colorLerp * (_LightColor0.rgb * diff + 0.2);
+
+    // ----- Add per-pixel point/spot lights -----
+    #ifdef _ADDITIONAL_LIGHTS
+    for (int lightIndex = 0; lightIndex < unity_LightIndicesOffsetAndCount.y; lightIndex++)
+    {
+        int index = unity_LightIndices[unity_LightIndicesOffsetAndCount.x + lightIndex];
+        Light light = unity_Lights[index];
+
+        float3 lightDir = normalize(light.position.xyz - i.worldPos);
+        float distanceAtten = 1.0 / (1.0 + light.range * length(lightDir));
+        float diff2 = saturate(dot(normalDir, lightDir));
+        col += i.colorLerp * (light.color.rgb * diff2 * distanceAtten);
+    }
+    #endif
+
+    return float4(col, 1.0);
+}
             ENDHLSL
         }
     }
