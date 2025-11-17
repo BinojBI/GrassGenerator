@@ -8,7 +8,9 @@ The motivation behind this project is develop large grassfield using procedural 
 
 ## Video & Screenshots
 
-<video src="Screenshots/video.mp4" width="946" height="480" controls></video>
+
+https://github.com/user-attachments/assets/33a7616f-f2f3-4fa1-bd42-70076dfc5868
+
 ![Grassfieldscreenshot](/Screenshots/grassfield.png?raw=true "Optional Title")
 
 ## Features
